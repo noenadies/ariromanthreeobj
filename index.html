@@ -71,6 +71,27 @@ function initialize()
 
 	document.body.appendChild( renderer.domElement );
 
+
+
+	openFullscreen();
+	function openFullscreen() {
+  if (renderer.domElement.requestFullscreen) {
+	renderer.domElement.requestFullscreen();  alert(1);
+  } else if (renderer.domElement.mozRequestFullScreen) { /* Firefox */
+	renderer.mozRequestFullScreen();  alert(2);
+  } else if (renderer.domElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    renderer.webkitRequestFullscreen();  alert(3);
+  } else if (renderer.domElement.msRequestFullscreen) { /* IE/Edge */
+	renderer.domElement.msRequestFullscreen();  alert(4);
+  }
+
+}
+
+
+
+
+
+
 	clock = new THREE.Clock();
 	deltaTime = 0;
 	totalTime = 0;
