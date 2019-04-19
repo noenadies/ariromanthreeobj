@@ -9,6 +9,9 @@
 	<script src='js/three.js'></script>
 	<script src='js/OBJLoader.js'></script>
 	<script src='js/MTLLoader.js'></script>
+	<script src="ColladaLoader.js"></script>
+
+
 	<!-- include jsartookit -->
 	<script src="jsartoolkit5/artoolkit.min.js"></script>
 	<script src="jsartoolkit5/artoolkit.api.js"></script>
@@ -148,7 +151,7 @@ function initialize()
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
 		type: 'pattern', patternUrl: "hiro.patt",
 	})
-
+//	scene.add( new THREE.AxesHelper( 20 ) );
 	let geometry1 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let loader = new THREE.TextureLoader();
 	// let texture = loader.load( 'images/earth.jpg', render );
@@ -174,6 +177,10 @@ function initialize()
 					mesh0.scale.set(0.55,0.55,0.55);
 					markerRoot1.add(mesh0);
 				}, onProgress, onError );
+
+				markerRoot1.add( new THREE.AxesHelper( 20 ) );
+
+
 		});
 }
 
